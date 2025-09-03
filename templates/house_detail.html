@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Головона стоорінка{% endblock %}
+{% block content %}
+    <h2>Назва:{{house.name }}</h3>
+    <h4>Країна:{{house.country }}</h4> 
+    <h4>Адреса:{{house.adress }}</h4>
+    <h4>Кількість людей:{{house.people_count }}</h4>
+    <h4>Площа:{{house.square}}</h4>
+    <h4>Ціна за добу:{{house.price_by_day }}</h4>
+    <h4>Рейтинг:{{house.rating }}</h4>
+    <h4>Заброньовано:{{house.is_booked }}</h4>
+    <p>Інформація:{{house.info}}</p>
+    <p>Свторено:{{ house.created_at|date:"d.m.Y"}}</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Головона стоорінка{% endblock %}
+{% block content %}
+{% for house in houses%}
+    <h2><a href="{% url 'house-detail' house.pk %}">Назва будинку: {{ house.name }}</a></h2>
+    <h4>Країна:{{house.country }}</h4> 
+    <h4>Адреса:{{house.adress }}</h4>
+    <h4>Кількість людей:{{house.people_count }}</h4>
+    <h4>Ціна за добу:{{house.price_by_day }}</h4>
+    <h4>Рейтинг:{{house.rating }}</h4>
+    <h4>Заброньовано:{{house.is_booked }}</h4>
+    <hr>
+{% endfor %}
+{% endblock %}
