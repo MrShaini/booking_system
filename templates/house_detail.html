@@ -11,4 +11,6 @@
     <h4>Заброньовано:{{house.is_booked }}</h4>
     <p>Інформація:{{house.info}}</p>
     <p>Свторено:{{ house.created_at|date:"d.m.Y"}}</p>
+    <a href="{% url 'booking-house' house.pk %}" button type="button"
+    class="btn btn-outline-primary">Забронювати</button>
 {% endblock %}

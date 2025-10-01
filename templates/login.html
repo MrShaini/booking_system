@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Вхід{% endblock %}
+{% block content %}
+<h2>Вхід</h2>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+{% endif %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <button type="submit" class="btn btn-outline-primary">Вхід</button>
+</form>
+{% endblock %}

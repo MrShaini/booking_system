@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Мої бронювання{% endblock %}
+{% block content %}
+{%% for booking in bookings %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"a href="{% url 'house-detail' booking.house.pk %}"> {{ booking.house.name }}</h5>
+            <p class="card-text">{{ booking.house.info|truncatechars:20 }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ booking.arival_date|date:"d M Y" }} - {{ booking.
+                departure_date|date:"d M Y" }}</li>
+            <li class="list-group-item">{{ booking.updated_at|date:"d M Y:i" }}</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
